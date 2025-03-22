@@ -1,0 +1,91 @@
+# Site settings
+baseurl: ''
+url: 'https://mclintock.dev'
+title: 'Steven McLintock'
+description: 'Scottish software developer living in Stratford, Ontario'
+author: 'Steven McLintock'
+
+# Build settings
+permalink: /:year/:month/:day/:title/
+plugins: [ jekyll-sitemap, jekyll-feed, jekyll-seo-tag ]
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+sass:
+  style: compressed
+
+# Stylesheets
+stylesheets:
+  - '/css/stylesheet.css'
+  - '/css/syntax.css'
+
+# Google Analytics
+google-analytics:
+  enabled: false
+  id: ''
+
+# The primary language used by the website
+language: 'en'
+
+# The header motif
+header-motif:
+  enabled: true
+  src: '/assets/img/steven-mclintock-motif.jpg'
+  width: '200'
+  height: '200'
+
+# The header title
+header-title:
+  enabled: true
+
+# The header description
+header-description:
+  enabled: true
+
+# Header menu
+header-menu:
+- { name: 'Home', url: '/' }
+- { name: 'About', url: '/about' }
+- { name: 'Blog', url: '/blog' }
+- { name: 'GitHub', url: 'https://github.com/stevenmclintock' }
+- { name: 'LinkedIn', url: 'https://linkedin.com/in/stevenmclintock' }
+
+# Footer menu
+footer-menu:
+- { name: 'Home', url: '/' }
+- { name: 'About', url: '/about' }
+- { name: 'Blog', url: '/blog' }
+- { name: 'RSS', url: '/feed.xml' }
+
+# Homepage
+homepage:
+  header-text: 'Hi! 👋 I''m Steven, a Scottish software developer living in Stratford, Ontario 🏴󠁧󠁢󠁳󠁣󠁴󠁿 🇨🇦'
+  intro-text: 'I''m currently a Senior Developer at <a href="https://1password.com/">1Password</a>! 
+              I proudly graduated from <a href="https://www.gcu.ac.uk" />Glasgow Caledonian University</a> 
+              with a BSc in Internet Software Development in 2006.'
+  blog-enabled: true
+  blog-title-text: 'Here''s my most recent posts'
+  blog-link-enabled: true
+  blog-link-url: '/blog'
+  blog-link-text: 'View all posts'
+
+# Blog
+blog:
+  header-text: 'Blog'
+  excerpt-enabled: true
+  read-more-enabled: false
+  read-more-text: 'Read more'
+
+# Related posts (only works if you use tags)
+related-posts:
+  enabled: true
+  header-text: 'More posts like this...'
+  limit: 3
+  no-related-posts-text: 'We couldn''t find any similar posts!'
+
+# Written on (post info displayed underneath the H1)
+written-on:
+  enabled: true
+  by-text: 'By'
+  on-text: 'on'

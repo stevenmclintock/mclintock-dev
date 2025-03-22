@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="{{ site.language }}">
+  <head>
+    {% include head.html %}
+  </head>
+
+  <body>
+    <main>
+      {% include header.html %}
+      
+      {{ content }}
+      
+      {% include footer.html %}
+    </main>
+
+    {% include analytics.html %}
+
+    <script>
+      const anchors = document.querySelectorAll("article a, nav ul li.active a");
+      anchors.forEach((a) => 
+        a.addEventListener("mouseover", () => 
+          anchors.forEach((a) => 
+            (!a.classList.contains("alt")) ? a.classList.add("alt") : a.classList.remove("alt")
+        )));
+    </script>
+  </body>
+</html>

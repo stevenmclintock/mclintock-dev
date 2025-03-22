@@ -1,0 +1,46 @@
+---
+layout: default
+---
+
+<article>
+    {% if site.homepage.header-text.size > 0 %}
+    <section class="page-header text-center">
+      <h1>
+        {{ site.homepage.header-text }}
+      </h1>
+    </section>
+    {% endif %}
+
+    {% if site.homepage.intro-text.size > 0 or site.homepage.intro-image.size > 0 %}
+    <section class="text-center">
+        {% if site.homepage.intro-text.size > 0 %}
+        <p>{{ site.homepage.intro-text }}</p>
+        {% endif %}
+    </section>
+    {% endif %}
+    
+    {% if site.homepage.blog-enabled %}
+    {% if site.homepage.blog-title-text.size > 0 %}
+    <section class="text-center top-bumper bottom-bumper">
+        <h4>{{ site.homepage.blog-title-text }}</h4>
+    </section>
+    {% endif %}
+    
+    {% for post in site.posts limit:3 %}
+        {%
+            include blog-summary.html
+            url=post.url
+            title=post.title
+            date=post.date
+            author=post.author
+            excerpt=post.excerpt
+        %}
+    {% endfor %}
+
+    {% if site.homepage.blog-link-enabled and site.homepage.blog-link-url.size > 0 and site.homepage.blog-link-text.size > 0 %}
+    <section class="text-center top-bumper">
+        <a href="{{ site.baseurl }}{{ site.homepage.blog-link-url }}">{{ site.homepage.blog-link-text }}</a>
+    </section>
+    {% endif %}
+    {% endif %}
+</article>

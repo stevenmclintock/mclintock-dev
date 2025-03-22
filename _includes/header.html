@@ -1,0 +1,31 @@
+<header>
+    <section class="header-title">
+        {% if site.header-title.enabled %}
+            <a href="{{ site.baseurl }}/">{{ site.title }}</a>
+        {% endif %}
+
+        {% if site.header-description.enabled %}
+            <span>{{ site.description }}</span>
+        {% endif %}
+    </section>
+
+    <section class="header-motif">
+        {% if site.header-motif.enabled and site.header-motif.src.size > 0 and site.header-motif.width.size > 0 and site.header-motif.height.size > 0 %}
+            <a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}{{ site.header-motif.src }}" alt="{{ site.title }}" width="{{ site.header-motif.width }}" height="{{ site.header-motif.height }}" /></a>
+        {% endif %}
+    </section>
+</header>
+
+<nav>
+    <ul>
+        {% for item in site.header-menu %}
+            {% assign current_url = page.url | remove: "/" %}
+            {% assign item_url = item.url | remove: "/" %}
+            {% if current_url == item_url %}
+                <li class="active"><a href="{{ item.url }}">{{ item.name }}</a></li>
+            {% else %}
+                <li><a href="{{ item.url }}">{{ item.name }}</a></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</nav>
