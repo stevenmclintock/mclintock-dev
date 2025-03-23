@@ -20,8 +20,9 @@
     <ul>
         {% for item in site.header-menu %}
             {% assign current_url = page.url | remove: "/" %}
+            {% assign current_layout = page.layout %}
             {% assign item_url = item.url | remove: "/" %}
-            {% if current_url == item_url %}
+            {% if (current_url == item_url) or (item_url == "blog" and current_layout == "post") %}
                 <li class="active"><a href="{{ item.url }}">{{ item.name }}</a></li>
             {% else %}
                 <li><a href="{{ item.url }}">{{ item.name }}</a></li>
