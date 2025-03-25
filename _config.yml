@@ -22,8 +22,7 @@ stylesheets:
 
 # Google Analytics
 google-analytics:
-  enabled: false
-  id: ''
+  enabled: true
 
 # The primary language used by the website
 language: 'en'
